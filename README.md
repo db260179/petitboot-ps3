@@ -1,9 +1,10 @@
 # Quick build howto for PS3 petitboot Openwrt
 
 ## If you want to add more packages
+
 cd openwrt/package
 
-ln -sf ../../openwrt_packages/libs/jpeg jpeg
+`ln -sf ../../openwrt_packages/libs/jpeg jpeg
 ln -sf ../../openwrt_packages/libs/libpng libpng
 ln -sf ../../openwrt_packages/libs/libtwin libtwin
 ln -sf ../../openwrt_packages/utils/petitboot petitboot
@@ -23,13 +24,14 @@ ln -sf ../../openwrt_packages/utils/hdparm hdparm
 ln -sf ../../openwrt_packages/utils/bash bash
 ln -sf ../../openwrt_packages/net/wget wget
 ln -sf ../../openwrt_packages/net/dhcpcd dhcpcd
-ln -sf ../../openwrt_packages/net/net-tools net-tools
+ln -sf ../../openwrt_packages/net/net-tools net-tools`
 
-cd ..
+`cd ..`
 
-cp ps3_petitboot_config .config
+`cp ps3_petitboot_config .config`
 
-make menuconfig # If you want to change options
-make kernel_menuconfig # Change kernel modules etc
+`make menuconfig # If you want to change options`
 
-make V=99 # Single thread only build
+`make kernel_menuconfig # Change kernel modules etc`
+
+`make V=99 # Single thread only build`
