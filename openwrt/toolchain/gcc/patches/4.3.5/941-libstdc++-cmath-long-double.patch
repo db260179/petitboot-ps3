@@ -1,0 +1,216 @@
+--- a/libstdc++-v3/include/tr1_impl/cmath
++++ b/libstdc++-v3/include/tr1_impl/cmath
+@@ -155,143 +155,213 @@
+   // functions
+   using ::acosh;
+   using ::acoshf;
++#ifdef __LONG_DOUBLE_128__
+   using ::acoshl;
++#endif
+ 
+   using ::asinh;
+   using ::asinhf;
++#ifdef __LONG_DOUBLE_128__
+   using ::asinhl;
++#endif
+ 
+   using ::atanh;
+   using ::atanhf;
++#ifdef __LONG_DOUBLE_128__
+   using ::atanhl;
++#endif
+ 
+   using ::cbrt;
+   using ::cbrtf;
++#ifdef __LONG_DOUBLE_128__
+   using ::cbrtl;
++#endif
+ 
+   using ::copysign;
+   using ::copysignf;
++#ifdef __LONG_DOUBLE_128__
+   using ::copysignl;
++#endif
+ 
+   using ::erf;
+   using ::erff;
++#ifdef __LONG_DOUBLE_128__
+   using ::erfl;
++#endif
+ 
+   using ::erfc;
+   using ::erfcf;
++#ifdef __LONG_DOUBLE_128__
+   using ::erfcl;
++#endif
+ 
+   using ::exp2;
+   using ::exp2f;
++#ifdef __LONG_DOUBLE_128__
+   using ::exp2l;
++#endif
+ 
+   using ::expm1;
+   using ::expm1f;
++#ifdef __LONG_DOUBLE_128__
+   using ::expm1l;
++#endif
+ 
+   using ::fdim;
+   using ::fdimf;
++#ifdef __LONG_DOUBLE_128__
+   using ::fdiml;
++#endif
+ 
+   using ::fma;
+   using ::fmaf;
++#ifdef __LONG_DOUBLE_128__
+   using ::fmal;
++#endif
+ 
+   using ::fmax;
+   using ::fmaxf;
++#ifdef __LONG_DOUBLE_128__
+   using ::fmaxl;
++#endif
+ 
+   using ::fmin;
+   using ::fminf;
++#ifdef __LONG_DOUBLE_128__
+   using ::fminl;
++#endif
+ 
+   using ::hypot;
+   using ::hypotf;
++#ifdef __LONG_DOUBLE_128__
+   using ::hypotl;
++#endif
+ 
+   using ::ilogb;
+   using ::ilogbf;
++#ifdef __LONG_DOUBLE_128__
+   using ::ilogbl;
++#endif
+ 
+   using ::lgamma;
+   using ::lgammaf;
++#ifdef __LONG_DOUBLE_128__
+   using ::lgammal;
++#endif
+ 
+   using ::llrint;
+   using ::llrintf;
++#ifdef __LONG_DOUBLE_128__
+   using ::llrintl;
++#endif
+ 
+   using ::llround;
+   using ::llroundf;
++#ifdef __LONG_DOUBLE_128__
+   using ::llroundl;
++#endif
+ 
+   using ::log1p;
+   using ::log1pf;
++#ifdef __LONG_DOUBLE_128__
+   using ::log1pl;
++#endif
+ 
+   using ::log2;
+   using ::log2f;
++#ifdef __LONG_DOUBLE_128__
+   using ::log2l;
++#endif
+ 
+   using ::logb;
+   using ::logbf;
++#ifdef __LONG_DOUBLE_128__
+   using ::logbl;
++#endif
+ 
+   using ::lrint;
+   using ::lrintf;
++#ifdef __LONG_DOUBLE_128__
+   using ::lrintl;
++#endif
+ 
+   using ::lround;
+   using ::lroundf;
++#ifdef __LONG_DOUBLE_128__
+   using ::lroundl;
++#endif
+ 
+   using ::nan;
+   using ::nanf;
++#ifdef __LONG_DOUBLE_128__
+   using ::nanl;
++#endif
+ 
+   using ::nearbyint;
+   using ::nearbyintf;
++#ifdef __LONG_DOUBLE_128__
+   using ::nearbyintl;
++#endif
+ 
+   using ::nextafter;
+   using ::nextafterf;
++#ifdef __LONG_DOUBLE_128__
+   using ::nextafterl;
++#endif
+ 
+   using ::nexttoward;
+   using ::nexttowardf;
++#ifdef __LONG_DOUBLE_128__
+   using ::nexttowardl;
++#endif
+ 
+   using ::remainder;
+   using ::remainderf;
++#ifdef __LONG_DOUBLE_128__
+   using ::remainderl;
++#endif
+ 
+   using ::remquo;
+   using ::remquo;
++#ifdef __LONG_DOUBLE_128__
+   using ::remquo;
++#endif
+ 
+   using ::rint;
+   using ::rintf;
++#ifdef __LONG_DOUBLE_128__
+   using ::rintl;
++#endif
+ 
+   using ::round;
+   using ::roundf;
++#ifdef __LONG_DOUBLE_128__
+   using ::roundl;
++#endif
+ 
+   using ::scalbln;
+   using ::scalblnf;
++#ifdef __LONG_DOUBLE_128__
+   using ::scalblnl;
++#endif
+ 
+   using ::scalbn;
+   using ::scalbnf;
++#ifdef __LONG_DOUBLE_128__
+   using ::scalbnl;
++#endif
+ 
+   using ::tgamma;
+   using ::tgammaf;
++#ifdef __LONG_DOUBLE_128__
+   using ::tgammal;
++#endif
+ 
+   using ::trunc;
+   using ::truncf;
++#ifdef __LONG_DOUBLE_128__
+   using ::truncl;
++#endif
+ 
+ #endif
+ 

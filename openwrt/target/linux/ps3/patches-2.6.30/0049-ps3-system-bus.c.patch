@@ -1,0 +1,18 @@
+--- a/arch/powerpc/platforms/ps3/system-bus.c
++++ b/arch/powerpc/platforms/ps3/system-bus.c
+@@ -172,6 +172,7 @@
+ 	case PS3_MATCH_ID_STOR_DISK:
+ 	case PS3_MATCH_ID_STOR_ROM:
+ 	case PS3_MATCH_ID_STOR_FLASH:
++	case PS3_MATCH_ID_STOR_VFLASH:
+ 		return ps3_open_hv_device_sb(dev);
+ 
+ 	case PS3_MATCH_ID_SOUND:
+@@ -210,6 +211,7 @@
+ 	case PS3_MATCH_ID_STOR_DISK:
+ 	case PS3_MATCH_ID_STOR_ROM:
+ 	case PS3_MATCH_ID_STOR_FLASH:
++	case PS3_MATCH_ID_STOR_VFLASH:
+ 		return ps3_close_hv_device_sb(dev);
+ 
+ 	case PS3_MATCH_ID_SOUND:

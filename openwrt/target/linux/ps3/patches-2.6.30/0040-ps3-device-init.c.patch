@@ -1,0 +1,71 @@
+--- a/arch/powerpc/platforms/ps3/device-init.c
++++ b/arch/powerpc/platforms/ps3/device-init.c
+@@ -31,6 +31,26 @@
+ 
+ #include "platform.h"
+ 
++static unsigned int ps3_stor_disk_region_flags[] =
++{
++	0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0
++};
++
++static unsigned int ps3_stor_rom_region_flags[] =
++{
++	0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0
++};
++
++static unsigned int ps3_stor_flash_region_flags[] =
++{
++	0x2, 0x2, 0x2, 0x2, 0x0, 0x0, 0x0, 0x0
++};
++
++static unsigned int ps3_stor_vflash_region_flags[] =
++{
++	0x2, 0x4, 0x4, 0x4, 0x4, 0x0, 0x2, 0x0
++};
++
+ static int __init ps3_register_lpm_devices(void)
+ {
+ 	int result;
+@@ -400,6 +420,27 @@
+ 		p->regions[i].id = id;
+ 		p->regions[i].start = start;
+ 		p->regions[i].size = size;
++
++		switch (match_id) {
++		case PS3_MATCH_ID_STOR_DISK:
++			p->regions[i].flags = ps3_stor_disk_region_flags[i];
++			break;
++
++		case PS3_MATCH_ID_STOR_ROM:
++			p->regions[i].flags = ps3_stor_rom_region_flags[i];
++			break;
++
++		case PS3_MATCH_ID_STOR_VFLASH:
++			p->regions[i].flags = ps3_stor_vflash_region_flags[i];
++			break;
++
++		case PS3_MATCH_ID_STOR_FLASH:
++			p->regions[i].flags = ps3_stor_flash_region_flags[i];
++			break;
++
++		default:
++			p->regions[i].flags = 0x0;
++		}
+ 	}
+ 
+ 	result = ps3_system_bus_device_register(&p->sbd);
+@@ -591,6 +632,13 @@
+ 				 __func__, __LINE__);
+ 		break;
+ 
++	case PS3_DEV_TYPE_STOR_VFLASH:
++		result = ps3_setup_storage_dev(repo, PS3_MATCH_ID_STOR_VFLASH);
++		if (result)
++			pr_debug("%s:%u ps3_setup_storage_dev failed\n",
++				 __func__, __LINE__);
++		break;
++
+ 	default:
+ 		result = 0;
+ 		pr_debug("%s:%u: unsupported dev_type %u\n", __func__, __LINE__,

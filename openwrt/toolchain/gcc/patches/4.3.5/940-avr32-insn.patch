@@ -1,0 +1,18 @@
+--- a/gcc/regrename.c
++++ b/gcc/regrename.c
+@@ -1630,6 +1630,7 @@
+          insns in the middle of a sequence of cond_exec insns and if the test operands
+          are modified these tests will fail.
+       */
++#ifdef IFCVT_ALLOW_MODIFY_TEST_IN_INSN
+       if ( IFCVT_ALLOW_MODIFY_TEST_IN_INSN
+            && predicated )
+         { 
+@@ -1673,6 +1674,7 @@
+         {
+           prev_pred_insn_skipped = 0;
+         }
++#endif /* IFCVT_ALLOW_MODIFY_TEST_IN_INSN */
+       
+       /* For each earlyclobber operand, zap the value data.  */
+       for (i = 0; i < n_ops; i++)

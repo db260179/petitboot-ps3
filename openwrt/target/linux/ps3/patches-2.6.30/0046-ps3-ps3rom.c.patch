@@ -1,0 +1,35 @@
+--- a/drivers/scsi/ps3rom.c
++++ b/drivers/scsi/ps3rom.c
+@@ -170,13 +170,14 @@
+ 			       struct scsi_cmnd *cmd, u32 start_sector,
+ 			       u32 sectors)
+ {
++	unsigned int region_idx = 0;
+ 	int res;
+ 
+ 	dev_dbg(&dev->sbd.core, "%s:%u: read %u sectors starting at %u\n",
+ 		__func__, __LINE__, sectors, start_sector);
+ 
+ 	res = lv1_storage_read(dev->sbd.dev_id,
+-			       dev->regions[dev->region_idx].id, start_sector,
++			       dev->regions[region_idx].id, start_sector,
+ 			       sectors, 0, dev->bounce_lpar, &dev->tag);
+ 	if (res) {
+ 		dev_err(&dev->sbd.core, "%s:%u: read failed %d\n", __func__,
+@@ -191,6 +192,7 @@
+ 				struct scsi_cmnd *cmd, u32 start_sector,
+ 				u32 sectors)
+ {
++	unsigned int region_idx = 0;
+ 	int res;
+ 
+ 	dev_dbg(&dev->sbd.core, "%s:%u: write %u sectors starting at %u\n",
+@@ -199,7 +201,7 @@
+ 	scsi_sg_copy_to_buffer(cmd, dev->bounce_buf, dev->bounce_size);
+ 
+ 	res = lv1_storage_write(dev->sbd.dev_id,
+-				dev->regions[dev->region_idx].id, start_sector,
++				dev->regions[region_idx].id, start_sector,
+ 				sectors, 0, dev->bounce_lpar, &dev->tag);
+ 	if (res) {
+ 		dev_err(&dev->sbd.core, "%s:%u: write failed %d\n", __func__,
