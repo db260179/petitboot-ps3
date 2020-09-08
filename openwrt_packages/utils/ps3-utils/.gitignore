@@ -1,0 +1,64 @@
+#
+# NOTE! Don't add files that are generated in specific
+# subdirectories here. Add them in the ".gitignore" file
+# in that subdirectory instead.
+#
+# Normal rules
+#
+.*
+*.o
+*.a
+*.s
+*.i
+*.lst
+
+#
+# Top-level generic files
+#
+tags
+TAGS
+
+#
+# bootstrap generated files
+#
+aclocal.m4
+autom4te.cache
+config.guess
+config.h.in
+config.sub
+config.sub.orig
+configure.ac
+configure
+depcomp
+install-sh
+ltmain.sh
+missing
+Makefile.in
+
+#
+# configure generated files
+#
+Makefile
+config.h
+config.log
+config.status
+libtool
+stamp-h1
+
+#
+# make generated files
+#
+*.lo
+*.la
+ps3-boot-game-os
+ps3-dump-bootloader
+ps3-flash-util
+ps3-rtc-init
+ps3-video-mode
+ps3-boot-game-os.8
+ps3-dump-bootloader.8
+ps3-flash-util.8
+ps3-rtc-init.8
+ps3-utils.8
+ps3-video-mode.8
+
